@@ -13,8 +13,9 @@ app.listen(PORT, () => console.log(`?? Server running on port ${PORT}`))
 app.use(bodyParser.json())
 app.post("/hook", (req, res) => {
     res.status(200).end() // Responding is important
-    console.log(wc([req.body.latitude, req.body.longitude]))
-    console.log(req.body[0].name)
-    console.log(req.body[0].level)
-    console.log(req.body[0].pokemon_id)
+    const raidInfo = req.body
+    console.log(wc([raidInfo.latitude, raidInfo.longitude]))
+    console.log(raidInfo.name)
+    console.log(raidInfo.level)
+    console.log(raidInfo.pokemon_id)
 })
