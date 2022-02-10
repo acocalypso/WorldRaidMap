@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.post("/hook", (req, res) => {
     res.status(200).end() // Responding is important
     console.log(wc([req.body.latitude, req.body.longitude]))
-    console.log(req.body.name)
-    console.log(req.body.level)
-    console.log(req.body.pokemon_id)
+    console.log(req.body[0].name)
+    console.log(req.body[0].level)
+    console.log(req.body[0].pokemon_id)
 })
